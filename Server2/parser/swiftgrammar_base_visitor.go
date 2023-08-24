@@ -27,11 +27,27 @@ func (v *BaseSwiftGrammarVisitor) VisitIfstmt(ctx *IfstmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseSwiftGrammarVisitor) VisitElsestmt(ctx *ElsestmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitElse_ifstmt(ctx *Else_ifstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseSwiftGrammarVisitor) VisitDeclarationstmt(ctx *DeclarationstmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseSwiftGrammarVisitor) VisitAsignacionstmt(ctx *AsignacionstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitIg_type(ctx *Ig_typeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitReserv(ctx *ReservContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

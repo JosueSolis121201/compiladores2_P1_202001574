@@ -47,16 +47,40 @@ printstmt returns [interfaces.Instruction prnt]
 ;
 
 ifstmt returns [interfaces.Instruction ifinst]
-: IF expr LLAVEIZQ block LLAVEDER { $ifinst = instructions.NewIf($IF.line, $IF.pos, $expr.e, $block.blk) }
+: IF expr LLAVEIZQ block LLAVEDER ELSE_IF ELSE {}
+;
+
+elsestmt returns []
+: ELSE LLAVEIZQ  block LLAVEDER  {}
+| 
+;
+
+else_ifstmt returns []
+:  else_ifstmt ELSE_IF expr LLAVEIZQ block LLAVEDER   {}
+| 
 ;
 
 declarationstmt returns [interfaces.Instruction dec]
-: VAR ID D_PTS types IG expr  { $dec = instructions.NewDeclaration($VAR.line, $VAR.pos, $ID.text, $types.ty, $expr.e) }
+: reserv ID D_PTS types IG expr  {}
+| reserv ID IG expr  {}
 ;
 
 
 asignacionstmt returns []
-: ID IG expr {}
+: ID ig_type expr {}
+;
+
+ig_type returns []
+: IG {}
+| IG_IG {}
+| MAS_IGUAL {}
+| MENOS_IGUAL {}
+;
+
+
+reserv returns []
+: VAR {}
+| LET {}
 ;
 
 types returns[environment.TipoExpresion ty]

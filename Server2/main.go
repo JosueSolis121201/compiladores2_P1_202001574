@@ -1,10 +1,7 @@
 package main
 
 import (
-	"Server2/environment"
-	"Server2/interfaces"
 	"Server2/parser"
-	"fmt"
 
 	"github.com/antlr4-go/antlr/v4"
 )
@@ -26,7 +23,7 @@ type Message struct {
 
 func main() {
 	//Entrada
-	code := "valor3 = \"otra cadena\""
+	code := "if 3 < 4 {print(5)} "
 	//Leyendo entrada
 	input := antlr.NewInputStream(code)
 	lexer := parser.NewSwiftLexer(input)
@@ -38,14 +35,15 @@ func main() {
 	//listener
 	var listener *TreeShapeListener = NewTreeShapeListener()
 	antlr.ParseTreeWalkerDefault.Walk(listener, tree)
-	Code := listener.Code
+	/*Code := listener.Code
 	//create ast
 	var Ast environment.AST
 	//ejecución
 	for _, inst := range Code {
 		inst.(interfaces.Instruction).Ejecutar(&Ast, nil)
+		fmt.Print("Hello, ")
 	}
-	fmt.Println(Ast.GetPrint())
+	fmt.Println(Ast.GetPrint())*/
 }
 
 func NewTreeShapeListener() *TreeShapeListener {

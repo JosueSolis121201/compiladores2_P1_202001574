@@ -22,11 +22,23 @@ type SwiftGrammarListener interface {
 	// EnterIfstmt is called when entering the ifstmt production.
 	EnterIfstmt(c *IfstmtContext)
 
+	// EnterElsestmt is called when entering the elsestmt production.
+	EnterElsestmt(c *ElsestmtContext)
+
+	// EnterElse_ifstmt is called when entering the else_ifstmt production.
+	EnterElse_ifstmt(c *Else_ifstmtContext)
+
 	// EnterDeclarationstmt is called when entering the declarationstmt production.
 	EnterDeclarationstmt(c *DeclarationstmtContext)
 
 	// EnterAsignacionstmt is called when entering the asignacionstmt production.
 	EnterAsignacionstmt(c *AsignacionstmtContext)
+
+	// EnterIg_type is called when entering the ig_type production.
+	EnterIg_type(c *Ig_typeContext)
+
+	// EnterReserv is called when entering the reserv production.
+	EnterReserv(c *ReservContext)
 
 	// EnterTypes is called when entering the types production.
 	EnterTypes(c *TypesContext)
@@ -55,11 +67,23 @@ type SwiftGrammarListener interface {
 	// ExitIfstmt is called when exiting the ifstmt production.
 	ExitIfstmt(c *IfstmtContext)
 
+	// ExitElsestmt is called when exiting the elsestmt production.
+	ExitElsestmt(c *ElsestmtContext)
+
+	// ExitElse_ifstmt is called when exiting the else_ifstmt production.
+	ExitElse_ifstmt(c *Else_ifstmtContext)
+
 	// ExitDeclarationstmt is called when exiting the declarationstmt production.
 	ExitDeclarationstmt(c *DeclarationstmtContext)
 
 	// ExitAsignacionstmt is called when exiting the asignacionstmt production.
 	ExitAsignacionstmt(c *AsignacionstmtContext)
+
+	// ExitIg_type is called when exiting the ig_type production.
+	ExitIg_type(c *Ig_typeContext)
+
+	// ExitReserv is called when exiting the reserv production.
+	ExitReserv(c *ReservContext)
 
 	// ExitTypes is called when exiting the types production.
 	ExitTypes(c *TypesContext)

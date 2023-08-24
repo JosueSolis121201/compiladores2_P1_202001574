@@ -1,7 +1,7 @@
 lexer grammar SwiftLexer;
 
 // --------------- Tokens
-// types
+// types;
 INT:    'Int';
 FLOAT:  'Float';
 BOOL:   'Bool';
@@ -14,6 +14,7 @@ FAL:    'false';
 PRINT:  'print';
 IF:     'if';
 ELSE:   'else';
+ELSE_IF:   'else if';
 WHILE:  'while';
 FOR:    'for';
 IN:    'in';
@@ -24,7 +25,7 @@ SWITCH: 'switch';
 BREAK: 'break';
 CASE:   'case';
 VAR:    'var';
-LET:    'Let';
+LET:    'let';
 D_APPEND:    '.append';
 D_REMOVE:    '.remove';
 REPEATING:    'repeating';

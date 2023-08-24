@@ -50,6 +50,18 @@ func (s *BaseSwiftGrammarListener) EnterIfstmt(ctx *IfstmtContext) {}
 // ExitIfstmt is called when production ifstmt is exited.
 func (s *BaseSwiftGrammarListener) ExitIfstmt(ctx *IfstmtContext) {}
 
+// EnterElsestmt is called when production elsestmt is entered.
+func (s *BaseSwiftGrammarListener) EnterElsestmt(ctx *ElsestmtContext) {}
+
+// ExitElsestmt is called when production elsestmt is exited.
+func (s *BaseSwiftGrammarListener) ExitElsestmt(ctx *ElsestmtContext) {}
+
+// EnterElse_ifstmt is called when production else_ifstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterElse_ifstmt(ctx *Else_ifstmtContext) {}
+
+// ExitElse_ifstmt is called when production else_ifstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitElse_ifstmt(ctx *Else_ifstmtContext) {}
+
 // EnterDeclarationstmt is called when production declarationstmt is entered.
 func (s *BaseSwiftGrammarListener) EnterDeclarationstmt(ctx *DeclarationstmtContext) {}
 
@@ -61,6 +73,18 @@ func (s *BaseSwiftGrammarListener) EnterAsignacionstmt(ctx *AsignacionstmtContex
 
 // ExitAsignacionstmt is called when production asignacionstmt is exited.
 func (s *BaseSwiftGrammarListener) ExitAsignacionstmt(ctx *AsignacionstmtContext) {}
+
+// EnterIg_type is called when production ig_type is entered.
+func (s *BaseSwiftGrammarListener) EnterIg_type(ctx *Ig_typeContext) {}
+
+// ExitIg_type is called when production ig_type is exited.
+func (s *BaseSwiftGrammarListener) ExitIg_type(ctx *Ig_typeContext) {}
+
+// EnterReserv is called when production reserv is entered.
+func (s *BaseSwiftGrammarListener) EnterReserv(ctx *ReservContext) {}
+
+// ExitReserv is called when production reserv is exited.
+func (s *BaseSwiftGrammarListener) ExitReserv(ctx *ReservContext) {}
 
 // EnterTypes is called when production types is entered.
 func (s *BaseSwiftGrammarListener) EnterTypes(ctx *TypesContext) {}
