@@ -106,7 +106,7 @@ func swiftgrammarParserInit() {
 		5, 8, 0, 0, 56, 57, 5, 55, 0, 0, 57, 58, 3, 24, 12, 0, 58, 59, 5, 56, 0,
 		0, 59, 60, 6, 3, -1, 0, 60, 7, 1, 0, 0, 0, 61, 62, 5, 9, 0, 0, 62, 63,
 		3, 24, 12, 0, 63, 64, 5, 57, 0, 0, 64, 65, 3, 2, 1, 0, 65, 66, 5, 58, 0,
-		0, 66, 67, 5, 11, 0, 0, 67, 68, 5, 10, 0, 0, 68, 69, 6, 4, -1, 0, 69, 9,
+		0, 66, 67, 3, 12, 6, 0, 67, 68, 3, 10, 5, 0, 68, 69, 6, 4, -1, 0, 69, 9,
 		1, 0, 0, 0, 70, 71, 5, 10, 0, 0, 71, 72, 5, 57, 0, 0, 72, 73, 3, 2, 1,
 		0, 73, 74, 5, 58, 0, 0, 74, 75, 6, 5, -1, 0, 75, 78, 1, 0, 0, 0, 76, 78,
 		1, 0, 0, 0, 77, 70, 1, 0, 0, 0, 77, 76, 1, 0, 0, 0, 78, 11, 1, 0, 0, 0,
@@ -1131,8 +1131,8 @@ type IIfstmtContext interface {
 	LLAVEIZQ() antlr.TerminalNode
 	Block() IBlockContext
 	LLAVEDER() antlr.TerminalNode
-	ELSE_IF() antlr.TerminalNode
-	ELSE() antlr.TerminalNode
+	Else_ifstmt() IElse_ifstmtContext
+	Elsestmt() IElsestmtContext
 
 	// IsIfstmtContext differentiates from other interfaces.
 	IsIfstmtContext()
@@ -1219,12 +1219,36 @@ func (s *IfstmtContext) LLAVEDER() antlr.TerminalNode {
 	return s.GetToken(SwiftGrammarParserLLAVEDER, 0)
 }
 
-func (s *IfstmtContext) ELSE_IF() antlr.TerminalNode {
-	return s.GetToken(SwiftGrammarParserELSE_IF, 0)
+func (s *IfstmtContext) Else_ifstmt() IElse_ifstmtContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IElse_ifstmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IElse_ifstmtContext)
 }
 
-func (s *IfstmtContext) ELSE() antlr.TerminalNode {
-	return s.GetToken(SwiftGrammarParserELSE, 0)
+func (s *IfstmtContext) Elsestmt() IElsestmtContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IElsestmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IElsestmtContext)
 }
 
 func (s *IfstmtContext) GetRuleContext() antlr.RuleContext {
@@ -1295,19 +1319,11 @@ func (p *SwiftGrammarParser) Ifstmt() (localctx IIfstmtContext) {
 	}
 	{
 		p.SetState(66)
-		p.Match(SwiftGrammarParserELSE_IF)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
+		p.else_ifstmt(0)
 	}
 	{
 		p.SetState(67)
-		p.Match(SwiftGrammarParserELSE)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
+		p.Elsestmt()
 	}
 
 errorExit:
@@ -1471,7 +1487,7 @@ func (p *SwiftGrammarParser) Elsestmt() (localctx IElsestmtContext) {
 			}
 		}
 
-	case SwiftGrammarParserEOF:
+	case SwiftGrammarParserEOF, SwiftGrammarParserPRINT, SwiftGrammarParserIF, SwiftGrammarParserVAR, SwiftGrammarParserLET, SwiftGrammarParserID, SwiftGrammarParserLLAVEDER:
 		p.EnterOuterAlt(localctx, 2)
 
 	default:

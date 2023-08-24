@@ -47,7 +47,7 @@ printstmt returns [interfaces.Instruction prnt]
 ;
 
 ifstmt returns [interfaces.Instruction ifinst]
-: IF expr LLAVEIZQ block LLAVEDER ELSE_IF ELSE {}
+: IF expr LLAVEIZQ block LLAVEDER else_ifstmt elsestmt {}
 ;
 
 elsestmt returns []
@@ -63,6 +63,22 @@ else_ifstmt returns []
 declarationstmt returns [interfaces.Instruction dec]
 : reserv ID D_PTS types IG expr  {}
 | reserv ID IG expr  {}
+;
+
+
+switchstmt returns []
+: SWITCH expr LLAVEIZQ case default LLAVEDER   {}
+;
+
+default returns []
+:  DEFAULT D_PTS  block  {}
+|  
+; 
+
+
+case returns []
+: case CASE  expr D_PTS block   {}
+| 
 ;
 
 
