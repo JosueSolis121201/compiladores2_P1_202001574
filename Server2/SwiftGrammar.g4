@@ -40,6 +40,7 @@ instruction returns [interfaces.Instruction inst]
 | ifstmt { $inst = $ifstmt.ifinst }
 | declarationstmt { $inst = $declarationstmt.dec }
 | asignacionstmt {}
+| switchstmt {}
 ;
 
 printstmt returns [interfaces.Instruction prnt]
@@ -67,10 +68,10 @@ declarationstmt returns [interfaces.Instruction dec]
 
 
 switchstmt returns []
-: SWITCH expr LLAVEIZQ case default LLAVEDER   {}
+: SWITCH expr LLAVEIZQ case defaultsts LLAVEDER   {}
 ;
 
-default returns []
+defaultsts returns []
 :  DEFAULT D_PTS  block  {}
 |  
 ; 

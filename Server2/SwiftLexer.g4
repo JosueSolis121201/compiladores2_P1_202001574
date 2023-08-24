@@ -29,6 +29,7 @@ LET:    'let';
 D_APPEND:    '.append';
 D_REMOVE:    '.remove';
 REPEATING:    'repeating';
+DEFAULT:    'default';
 COUNT:    'count';
 STRUCT:    'STRUCT';
 MUTATING:    'mutating';

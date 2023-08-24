@@ -23,7 +23,7 @@ type Message struct {
 
 func main() {
 	//Entrada
-	code := "if 3 < 4 {print(5)} else if  3 < 4 {print(5)} else if  3 < 4 {print(5)}"
+	code := "switch numero { case 1:print(1) default:print(5) }"
 	//Leyendo entrada
 	input := antlr.NewInputStream(code)
 	lexer := parser.NewSwiftLexer(input)

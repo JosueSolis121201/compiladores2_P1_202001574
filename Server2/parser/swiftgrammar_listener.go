@@ -31,6 +31,15 @@ type SwiftGrammarListener interface {
 	// EnterDeclarationstmt is called when entering the declarationstmt production.
 	EnterDeclarationstmt(c *DeclarationstmtContext)
 
+	// EnterSwitchstmt is called when entering the switchstmt production.
+	EnterSwitchstmt(c *SwitchstmtContext)
+
+	// EnterDefaultsts is called when entering the defaultsts production.
+	EnterDefaultsts(c *DefaultstsContext)
+
+	// EnterCase is called when entering the case production.
+	EnterCase(c *CaseContext)
+
 	// EnterAsignacionstmt is called when entering the asignacionstmt production.
 	EnterAsignacionstmt(c *AsignacionstmtContext)
 
@@ -75,6 +84,15 @@ type SwiftGrammarListener interface {
 
 	// ExitDeclarationstmt is called when exiting the declarationstmt production.
 	ExitDeclarationstmt(c *DeclarationstmtContext)
+
+	// ExitSwitchstmt is called when exiting the switchstmt production.
+	ExitSwitchstmt(c *SwitchstmtContext)
+
+	// ExitDefaultsts is called when exiting the defaultsts production.
+	ExitDefaultsts(c *DefaultstsContext)
+
+	// ExitCase is called when exiting the case production.
+	ExitCase(c *CaseContext)
 
 	// ExitAsignacionstmt is called when exiting the asignacionstmt production.
 	ExitAsignacionstmt(c *AsignacionstmtContext)

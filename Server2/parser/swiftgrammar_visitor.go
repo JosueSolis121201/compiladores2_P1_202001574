@@ -4,6 +4,7 @@ package parser // SwiftGrammar
 import "github.com/antlr4-go/antlr/v4"
 
 
+
 // A complete Visitor for a parse tree produced by SwiftGrammarParser.
 type SwiftGrammarVisitor interface {
 	antlr.ParseTreeVisitor
@@ -31,6 +32,15 @@ type SwiftGrammarVisitor interface {
 
 	// Visit a parse tree produced by SwiftGrammarParser#declarationstmt.
 	VisitDeclarationstmt(ctx *DeclarationstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#switchstmt.
+	VisitSwitchstmt(ctx *SwitchstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#defaultsts.
+	VisitDefaultsts(ctx *DefaultstsContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#case.
+	VisitCase(ctx *CaseContext) interface{}
 
 	// Visit a parse tree produced by SwiftGrammarParser#asignacionstmt.
 	VisitAsignacionstmt(ctx *AsignacionstmtContext) interface{}
