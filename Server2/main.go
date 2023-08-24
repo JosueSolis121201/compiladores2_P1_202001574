@@ -26,7 +26,7 @@ type Message struct {
 
 func main() {
 	//Entrada
-	code := "print(10+5-3+1*10)"
+	code := "valor3 = \"otra cadena\""
 	//Leyendo entrada
 	input := antlr.NewInputStream(code)
 	lexer := parser.NewSwiftLexer(input)

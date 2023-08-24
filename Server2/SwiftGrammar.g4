@@ -39,6 +39,7 @@ instruction returns [interfaces.Instruction inst]
 : printstmt { $inst = $printstmt.prnt}
 | ifstmt { $inst = $ifstmt.ifinst }
 | declarationstmt { $inst = $declarationstmt.dec }
+| asignacionstmt {}
 ;
 
 printstmt returns [interfaces.Instruction prnt]
@@ -53,11 +54,17 @@ declarationstmt returns [interfaces.Instruction dec]
 : VAR ID D_PTS types IG expr  { $dec = instructions.NewDeclaration($VAR.line, $VAR.pos, $ID.text, $types.ty, $expr.e) }
 ;
 
+
+asignacionstmt returns []
+: ID IG expr {}
+;
+
 types returns[environment.TipoExpresion ty]
 : INT { $ty = environment.INTEGER }
 | FLOAT { $ty = environment.FLOAT }
 | STR { $ty = environment.STRING }
 | BOOL { $ty = environment.BOOLEAN }
+| CHAR {}
 | CORIZQ CORDER { $ty = environment.ARRAY }
 ;
 

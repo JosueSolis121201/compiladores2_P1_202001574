@@ -56,6 +56,12 @@ func (s *BaseSwiftGrammarListener) EnterDeclarationstmt(ctx *DeclarationstmtCont
 // ExitDeclarationstmt is called when production declarationstmt is exited.
 func (s *BaseSwiftGrammarListener) ExitDeclarationstmt(ctx *DeclarationstmtContext) {}
 
+// EnterAsignacionstmt is called when production asignacionstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterAsignacionstmt(ctx *AsignacionstmtContext) {}
+
+// ExitAsignacionstmt is called when production asignacionstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitAsignacionstmt(ctx *AsignacionstmtContext) {}
+
 // EnterTypes is called when production types is entered.
 func (s *BaseSwiftGrammarListener) EnterTypes(ctx *TypesContext) {}
 

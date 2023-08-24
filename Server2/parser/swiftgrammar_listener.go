@@ -25,6 +25,9 @@ type SwiftGrammarListener interface {
 	// EnterDeclarationstmt is called when entering the declarationstmt production.
 	EnterDeclarationstmt(c *DeclarationstmtContext)
 
+	// EnterAsignacionstmt is called when entering the asignacionstmt production.
+	EnterAsignacionstmt(c *AsignacionstmtContext)
+
 	// EnterTypes is called when entering the types production.
 	EnterTypes(c *TypesContext)
 
@@ -54,6 +57,9 @@ type SwiftGrammarListener interface {
 
 	// ExitDeclarationstmt is called when exiting the declarationstmt production.
 	ExitDeclarationstmt(c *DeclarationstmtContext)
+
+	// ExitAsignacionstmt is called when exiting the asignacionstmt production.
+	ExitAsignacionstmt(c *AsignacionstmtContext)
 
 	// ExitTypes is called when exiting the types production.
 	ExitTypes(c *TypesContext)
