@@ -9,6 +9,7 @@ STR:    'String';
 CHAR:   'Character';
 
 // reserved words
+AT_DD:    'at:';
 TRU:    'true';
 FAL:    'false';
 PRINT:  'print';
@@ -28,6 +29,9 @@ VAR:    'var';
 LET:    'let';
 D_APPEND:    '.append';
 D_REMOVE:    '.remove';
+D_REMOVELAST:    '.removelast';
+D_ISEMPTY:    '.IsEmpty';
+D_COUNT:    '.count';
 REPEATING:    'repeating';
 DEFAULT:    'default';
 COUNT:    'count';

@@ -16,11 +16,32 @@ type SwiftGrammarListener interface {
 	// EnterInstruction is called when entering the instruction production.
 	EnterInstruction(c *InstructionContext)
 
+	// EnterAsignacion_vectorstmt is called when entering the asignacion_vectorstmt production.
+	EnterAsignacion_vectorstmt(c *Asignacion_vectorstmtContext)
+
+	// EnterCountstmt is called when entering the countstmt production.
+	EnterCountstmt(c *CountstmtContext)
+
+	// EnterIsempystmt is called when entering the isempystmt production.
+	EnterIsempystmt(c *IsempystmtContext)
+
+	// EnterRemovestmt is called when entering the removestmt production.
+	EnterRemovestmt(c *RemovestmtContext)
+
+	// EnterRemovelaststmt is called when entering the removelaststmt production.
+	EnterRemovelaststmt(c *RemovelaststmtContext)
+
+	// EnterAppendstmt is called when entering the appendstmt production.
+	EnterAppendstmt(c *AppendstmtContext)
+
 	// EnterGuardstmt is called when entering the guardstmt production.
 	EnterGuardstmt(c *GuardstmtContext)
 
 	// EnterDeclaracion_vectorstmt is called when entering the declaracion_vectorstmt production.
 	EnterDeclaracion_vectorstmt(c *Declaracion_vectorstmtContext)
+
+	// EnterDeclaracion_vectorstmt_SUPP is called when entering the declaracion_vectorstmt_SUPP production.
+	EnterDeclaracion_vectorstmt_SUPP(c *Declaracion_vectorstmt_SUPPContext)
 
 	// EnterListaval is called when entering the listaval production.
 	EnterListaval(c *ListavalContext)
@@ -88,11 +109,32 @@ type SwiftGrammarListener interface {
 	// ExitInstruction is called when exiting the instruction production.
 	ExitInstruction(c *InstructionContext)
 
+	// ExitAsignacion_vectorstmt is called when exiting the asignacion_vectorstmt production.
+	ExitAsignacion_vectorstmt(c *Asignacion_vectorstmtContext)
+
+	// ExitCountstmt is called when exiting the countstmt production.
+	ExitCountstmt(c *CountstmtContext)
+
+	// ExitIsempystmt is called when exiting the isempystmt production.
+	ExitIsempystmt(c *IsempystmtContext)
+
+	// ExitRemovestmt is called when exiting the removestmt production.
+	ExitRemovestmt(c *RemovestmtContext)
+
+	// ExitRemovelaststmt is called when exiting the removelaststmt production.
+	ExitRemovelaststmt(c *RemovelaststmtContext)
+
+	// ExitAppendstmt is called when exiting the appendstmt production.
+	ExitAppendstmt(c *AppendstmtContext)
+
 	// ExitGuardstmt is called when exiting the guardstmt production.
 	ExitGuardstmt(c *GuardstmtContext)
 
 	// ExitDeclaracion_vectorstmt is called when exiting the declaracion_vectorstmt production.
 	ExitDeclaracion_vectorstmt(c *Declaracion_vectorstmtContext)
+
+	// ExitDeclaracion_vectorstmt_SUPP is called when exiting the declaracion_vectorstmt_SUPP production.
+	ExitDeclaracion_vectorstmt_SUPP(c *Declaracion_vectorstmt_SUPPContext)
 
 	// ExitListaval is called when exiting the listaval production.
 	ExitListaval(c *ListavalContext)

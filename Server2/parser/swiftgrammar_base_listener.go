@@ -38,6 +38,42 @@ func (s *BaseSwiftGrammarListener) EnterInstruction(ctx *InstructionContext) {}
 // ExitInstruction is called when production instruction is exited.
 func (s *BaseSwiftGrammarListener) ExitInstruction(ctx *InstructionContext) {}
 
+// EnterAsignacion_vectorstmt is called when production asignacion_vectorstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterAsignacion_vectorstmt(ctx *Asignacion_vectorstmtContext) {}
+
+// ExitAsignacion_vectorstmt is called when production asignacion_vectorstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitAsignacion_vectorstmt(ctx *Asignacion_vectorstmtContext) {}
+
+// EnterCountstmt is called when production countstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterCountstmt(ctx *CountstmtContext) {}
+
+// ExitCountstmt is called when production countstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitCountstmt(ctx *CountstmtContext) {}
+
+// EnterIsempystmt is called when production isempystmt is entered.
+func (s *BaseSwiftGrammarListener) EnterIsempystmt(ctx *IsempystmtContext) {}
+
+// ExitIsempystmt is called when production isempystmt is exited.
+func (s *BaseSwiftGrammarListener) ExitIsempystmt(ctx *IsempystmtContext) {}
+
+// EnterRemovestmt is called when production removestmt is entered.
+func (s *BaseSwiftGrammarListener) EnterRemovestmt(ctx *RemovestmtContext) {}
+
+// ExitRemovestmt is called when production removestmt is exited.
+func (s *BaseSwiftGrammarListener) ExitRemovestmt(ctx *RemovestmtContext) {}
+
+// EnterRemovelaststmt is called when production removelaststmt is entered.
+func (s *BaseSwiftGrammarListener) EnterRemovelaststmt(ctx *RemovelaststmtContext) {}
+
+// ExitRemovelaststmt is called when production removelaststmt is exited.
+func (s *BaseSwiftGrammarListener) ExitRemovelaststmt(ctx *RemovelaststmtContext) {}
+
+// EnterAppendstmt is called when production appendstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterAppendstmt(ctx *AppendstmtContext) {}
+
+// ExitAppendstmt is called when production appendstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitAppendstmt(ctx *AppendstmtContext) {}
+
 // EnterGuardstmt is called when production guardstmt is entered.
 func (s *BaseSwiftGrammarListener) EnterGuardstmt(ctx *GuardstmtContext) {}
 
@@ -49,6 +85,14 @@ func (s *BaseSwiftGrammarListener) EnterDeclaracion_vectorstmt(ctx *Declaracion_
 
 // ExitDeclaracion_vectorstmt is called when production declaracion_vectorstmt is exited.
 func (s *BaseSwiftGrammarListener) ExitDeclaracion_vectorstmt(ctx *Declaracion_vectorstmtContext) {}
+
+// EnterDeclaracion_vectorstmt_SUPP is called when production declaracion_vectorstmt_SUPP is entered.
+func (s *BaseSwiftGrammarListener) EnterDeclaracion_vectorstmt_SUPP(ctx *Declaracion_vectorstmt_SUPPContext) {
+}
+
+// ExitDeclaracion_vectorstmt_SUPP is called when production declaracion_vectorstmt_SUPP is exited.
+func (s *BaseSwiftGrammarListener) ExitDeclaracion_vectorstmt_SUPP(ctx *Declaracion_vectorstmt_SUPPContext) {
+}
 
 // EnterListaval is called when production listaval is entered.
 func (s *BaseSwiftGrammarListener) EnterListaval(ctx *ListavalContext) {}

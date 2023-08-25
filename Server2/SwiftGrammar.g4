@@ -46,14 +46,49 @@ instruction returns [interfaces.Instruction inst]
 | guardstmt {}
 | jumpstmt {}
 | declaracion_vectorstmt {}
+| appendstmt {}
+| removelaststmt {}
+| removestmt {}
+| isempystmt {}
+| countstmt {}
+| asignacion_vectorstmt {}
 ;
 
+asignacion_vectorstmt returns []
+: ID CORIZQ NUMBER CORDER IG ID  CORIZQ NUMBER CORDER  { }
+;
+countstmt returns []
+: ID D_COUNT { }
+;
+
+isempystmt returns []
+: ID D_ISEMPTY { }
+;
+
+removestmt returns []
+: ID D_REMOVE PARIZQ AT_DD expr PARDER { }
+;
+
+removelaststmt returns []
+: ID D_REMOVELAST PARIZQ PARDER { }
+;
+
+appendstmt returns []
+: ID D_APPEND PARIZQ expr PARDER { }
+;
 guardstmt returns []
 : GUARD expr ELSE LLAVEIZQ block  LLAVEDER { }
 ;
 
 declaracion_vectorstmt returns []
-: reserv ID D_PTS CORIZQ  types CORDER IG CORIZQ  listaval CORDER { }
+: reserv ID D_PTS CORIZQ  types CORDER IG declaracion_vectorstmt_SUPP { }
+;
+
+declaracion_vectorstmt_SUPP returns []
+:  CORIZQ  listaval CORDER {}
+| ID
+| types CORIZQ CORDER
+| PARIZQ PARDER
 ;
 
 
@@ -155,6 +190,12 @@ expr returns [interfaces.Expression e]
 | left=expr op=MENOS_IGUAL right=expr {}
 | left=expr op=MODULO right=expr {}
 | left=expr op=MODULO right=expr {}
+| ID D_APPEND {}
+| ID D_REMOVE {}
+| ID D_REMOVELAST {}
+| ID D_ISEMPTY {}
+| ID D_COUNT {}
+| ID CORIZQ NUMBER CORDER {}
 | list=listArray { $e = $list.p}
 | CORIZQ listParams CORDER { $e = expressions.NewArray($CORIZQ.line, $CORIZQ.pos, $listParams.l) }
 | NUMBER                             

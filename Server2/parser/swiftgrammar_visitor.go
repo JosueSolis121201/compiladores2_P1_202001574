@@ -18,11 +18,32 @@ type SwiftGrammarVisitor interface {
 	// Visit a parse tree produced by SwiftGrammarParser#instruction.
 	VisitInstruction(ctx *InstructionContext) interface{}
 
+	// Visit a parse tree produced by SwiftGrammarParser#asignacion_vectorstmt.
+	VisitAsignacion_vectorstmt(ctx *Asignacion_vectorstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#countstmt.
+	VisitCountstmt(ctx *CountstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#isempystmt.
+	VisitIsempystmt(ctx *IsempystmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#removestmt.
+	VisitRemovestmt(ctx *RemovestmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#removelaststmt.
+	VisitRemovelaststmt(ctx *RemovelaststmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#appendstmt.
+	VisitAppendstmt(ctx *AppendstmtContext) interface{}
+
 	// Visit a parse tree produced by SwiftGrammarParser#guardstmt.
 	VisitGuardstmt(ctx *GuardstmtContext) interface{}
 
 	// Visit a parse tree produced by SwiftGrammarParser#declaracion_vectorstmt.
 	VisitDeclaracion_vectorstmt(ctx *Declaracion_vectorstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#declaracion_vectorstmt_SUPP.
+	VisitDeclaracion_vectorstmt_SUPP(ctx *Declaracion_vectorstmt_SUPPContext) interface{}
 
 	// Visit a parse tree produced by SwiftGrammarParser#listaval.
 	VisitListaval(ctx *ListavalContext) interface{}
