@@ -16,6 +16,18 @@ type SwiftGrammarListener interface {
 	// EnterInstruction is called when entering the instruction production.
 	EnterInstruction(c *InstructionContext)
 
+	// EnterGuardstmt is called when entering the guardstmt production.
+	EnterGuardstmt(c *GuardstmtContext)
+
+	// EnterJumpstmt is called when entering the jumpstmt production.
+	EnterJumpstmt(c *JumpstmtContext)
+
+	// EnterWhilestmt is called when entering the whilestmt production.
+	EnterWhilestmt(c *WhilestmtContext)
+
+	// EnterForstmt is called when entering the forstmt production.
+	EnterForstmt(c *ForstmtContext)
+
 	// EnterPrintstmt is called when entering the printstmt production.
 	EnterPrintstmt(c *PrintstmtContext)
 
@@ -69,6 +81,18 @@ type SwiftGrammarListener interface {
 
 	// ExitInstruction is called when exiting the instruction production.
 	ExitInstruction(c *InstructionContext)
+
+	// ExitGuardstmt is called when exiting the guardstmt production.
+	ExitGuardstmt(c *GuardstmtContext)
+
+	// ExitJumpstmt is called when exiting the jumpstmt production.
+	ExitJumpstmt(c *JumpstmtContext)
+
+	// ExitWhilestmt is called when exiting the whilestmt production.
+	ExitWhilestmt(c *WhilestmtContext)
+
+	// ExitForstmt is called when exiting the forstmt production.
+	ExitForstmt(c *ForstmtContext)
 
 	// ExitPrintstmt is called when exiting the printstmt production.
 	ExitPrintstmt(c *PrintstmtContext)

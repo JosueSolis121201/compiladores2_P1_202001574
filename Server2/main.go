@@ -23,7 +23,7 @@ type Message struct {
 
 func main() {
 	//Entrada
-	code := "switch numero { case 1:print(1) default:print(5) }"
+	code := "guard i % 2 == 0 else {i = i + 1 continue}"
 	//Leyendo entrada
 	input := antlr.NewInputStream(code)
 	lexer := parser.NewSwiftLexer(input)

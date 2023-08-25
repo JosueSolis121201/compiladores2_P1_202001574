@@ -41,6 +41,28 @@ instruction returns [interfaces.Instruction inst]
 | declarationstmt { $inst = $declarationstmt.dec }
 | asignacionstmt {}
 | switchstmt {}
+| whilestmt {}
+| forstmt {}
+| guardstmt {}
+| jumpstmt {}
+;
+
+guardstmt returns []
+: GUARD expr ELSE LLAVEIZQ block  LLAVEDER { }
+;
+
+jumpstmt returns []
+: CONTINUE {}
+| RETURN {}
+| BREAK  {}
+;
+
+whilestmt returns []
+: WHILE expr LLAVEIZQ block  LLAVEDER { }
+;
+
+forstmt returns []
+: FOR ID IN expr LLAVEIZQ block LLAVEDER  { }
 ;
 
 printstmt returns [interfaces.Instruction prnt]
@@ -117,6 +139,9 @@ expr returns [interfaces.Expression e]
 | left=expr op=(IG_IG|DIF) right=expr { $e = expressions.NewOperation($left.start.GetLine(), $left.start.GetColumn(), $left.e, $op.text, $right.e) }
 | left=expr op=AND right=expr { $e = expressions.NewOperation($left.start.GetLine(), $left.start.GetColumn(), $left.e, $op.text, $right.e) }
 | left=expr op=OR right=expr { $e = expressions.NewOperation($left.start.GetLine(), $left.start.GetColumn(), $left.e, $op.text, $right.e) }
+| left=expr op=MAS_IGUAL right=expr {}
+| left=expr op=MENOS_IGUAL right=expr {}
+| left=expr op=MODULO right=expr {}
 | PARIZQ expr PARDER { $e = $expr.e }
 | list=listArray { $e = $list.p}
 | CORIZQ listParams CORDER { $e = expressions.NewArray($CORIZQ.line, $CORIZQ.pos, $listParams.l) }

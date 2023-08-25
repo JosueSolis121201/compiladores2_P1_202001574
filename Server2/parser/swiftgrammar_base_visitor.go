@@ -19,6 +19,22 @@ func (v *BaseSwiftGrammarVisitor) VisitInstruction(ctx *InstructionContext) inte
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseSwiftGrammarVisitor) VisitGuardstmt(ctx *GuardstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitJumpstmt(ctx *JumpstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitWhilestmt(ctx *WhilestmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitForstmt(ctx *ForstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseSwiftGrammarVisitor) VisitPrintstmt(ctx *PrintstmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }

@@ -18,6 +18,18 @@ type SwiftGrammarVisitor interface {
 	// Visit a parse tree produced by SwiftGrammarParser#instruction.
 	VisitInstruction(ctx *InstructionContext) interface{}
 
+	// Visit a parse tree produced by SwiftGrammarParser#guardstmt.
+	VisitGuardstmt(ctx *GuardstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#jumpstmt.
+	VisitJumpstmt(ctx *JumpstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#whilestmt.
+	VisitWhilestmt(ctx *WhilestmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#forstmt.
+	VisitForstmt(ctx *ForstmtContext) interface{}
+
 	// Visit a parse tree produced by SwiftGrammarParser#printstmt.
 	VisitPrintstmt(ctx *PrintstmtContext) interface{}
 
