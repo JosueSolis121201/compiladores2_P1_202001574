@@ -45,10 +45,22 @@ instruction returns [interfaces.Instruction inst]
 | forstmt {}
 | guardstmt {}
 | jumpstmt {}
+| declaracion_vectorstmt {}
 ;
 
 guardstmt returns []
 : GUARD expr ELSE LLAVEIZQ block  LLAVEDER { }
+;
+
+declaracion_vectorstmt returns []
+: reserv ID D_PTS CORIZQ  types CORDER IG CORIZQ  listaval CORDER { }
+;
+
+
+listaval returns []
+: listaval COMA expr  {}
+| expr  {}
+|
 ;
 
 jumpstmt returns []
@@ -142,7 +154,7 @@ expr returns [interfaces.Expression e]
 | left=expr op=MAS_IGUAL right=expr {}
 | left=expr op=MENOS_IGUAL right=expr {}
 | left=expr op=MODULO right=expr {}
-| PARIZQ expr PARDER { $e = $expr.e }
+| left=expr op=MODULO right=expr {}
 | list=listArray { $e = $list.p}
 | CORIZQ listParams CORDER { $e = expressions.NewArray($CORIZQ.line, $CORIZQ.pos, $listParams.l) }
 | NUMBER                             

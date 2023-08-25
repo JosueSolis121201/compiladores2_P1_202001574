@@ -21,6 +21,12 @@ type SwiftGrammarVisitor interface {
 	// Visit a parse tree produced by SwiftGrammarParser#guardstmt.
 	VisitGuardstmt(ctx *GuardstmtContext) interface{}
 
+	// Visit a parse tree produced by SwiftGrammarParser#declaracion_vectorstmt.
+	VisitDeclaracion_vectorstmt(ctx *Declaracion_vectorstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#listaval.
+	VisitListaval(ctx *ListavalContext) interface{}
+
 	// Visit a parse tree produced by SwiftGrammarParser#jumpstmt.
 	VisitJumpstmt(ctx *JumpstmtContext) interface{}
 

@@ -19,6 +19,12 @@ type SwiftGrammarListener interface {
 	// EnterGuardstmt is called when entering the guardstmt production.
 	EnterGuardstmt(c *GuardstmtContext)
 
+	// EnterDeclaracion_vectorstmt is called when entering the declaracion_vectorstmt production.
+	EnterDeclaracion_vectorstmt(c *Declaracion_vectorstmtContext)
+
+	// EnterListaval is called when entering the listaval production.
+	EnterListaval(c *ListavalContext)
+
 	// EnterJumpstmt is called when entering the jumpstmt production.
 	EnterJumpstmt(c *JumpstmtContext)
 
@@ -84,6 +90,12 @@ type SwiftGrammarListener interface {
 
 	// ExitGuardstmt is called when exiting the guardstmt production.
 	ExitGuardstmt(c *GuardstmtContext)
+
+	// ExitDeclaracion_vectorstmt is called when exiting the declaracion_vectorstmt production.
+	ExitDeclaracion_vectorstmt(c *Declaracion_vectorstmtContext)
+
+	// ExitListaval is called when exiting the listaval production.
+	ExitListaval(c *ListavalContext)
 
 	// ExitJumpstmt is called when exiting the jumpstmt production.
 	ExitJumpstmt(c *JumpstmtContext)

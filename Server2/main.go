@@ -23,7 +23,7 @@ type Message struct {
 
 func main() {
 	//Entrada
-	code := "guard i % 2 == 0 else {i = i + 1 continue}"
+	code := "print(vec2.count)"
 	//Leyendo entrada
 	input := antlr.NewInputStream(code)
 	lexer := parser.NewSwiftLexer(input)

@@ -23,6 +23,14 @@ func (v *BaseSwiftGrammarVisitor) VisitGuardstmt(ctx *GuardstmtContext) interfac
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseSwiftGrammarVisitor) VisitDeclaracion_vectorstmt(ctx *Declaracion_vectorstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitListaval(ctx *ListavalContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseSwiftGrammarVisitor) VisitJumpstmt(ctx *JumpstmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }

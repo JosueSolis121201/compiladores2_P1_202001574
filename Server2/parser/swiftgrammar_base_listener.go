@@ -44,6 +44,18 @@ func (s *BaseSwiftGrammarListener) EnterGuardstmt(ctx *GuardstmtContext) {}
 // ExitGuardstmt is called when production guardstmt is exited.
 func (s *BaseSwiftGrammarListener) ExitGuardstmt(ctx *GuardstmtContext) {}
 
+// EnterDeclaracion_vectorstmt is called when production declaracion_vectorstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterDeclaracion_vectorstmt(ctx *Declaracion_vectorstmtContext) {}
+
+// ExitDeclaracion_vectorstmt is called when production declaracion_vectorstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitDeclaracion_vectorstmt(ctx *Declaracion_vectorstmtContext) {}
+
+// EnterListaval is called when production listaval is entered.
+func (s *BaseSwiftGrammarListener) EnterListaval(ctx *ListavalContext) {}
+
+// ExitListaval is called when production listaval is exited.
+func (s *BaseSwiftGrammarListener) ExitListaval(ctx *ListavalContext) {}
+
 // EnterJumpstmt is called when production jumpstmt is entered.
 func (s *BaseSwiftGrammarListener) EnterJumpstmt(ctx *JumpstmtContext) {}
 
