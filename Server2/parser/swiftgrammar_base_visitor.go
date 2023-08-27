@@ -19,6 +19,34 @@ func (v *BaseSwiftGrammarVisitor) VisitInstruction(ctx *InstructionContext) inte
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseSwiftGrammarVisitor) VisitFuctionstmt(ctx *FuctionstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitParametros(ctx *ParametrosContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitStructstmt(ctx *StructstmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitDeclaracion_matrissts(ctx *Declaracion_matrisstsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitDeclaracion_matrissts_supp(ctx *Declaracion_matrissts_suppContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitTypematris(ctx *TypematrisContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseSwiftGrammarVisitor) VisitCorizmatris(ctx *CorizmatrisContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseSwiftGrammarVisitor) VisitAsignacion_vectorstmt(ctx *Asignacion_vectorstmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }

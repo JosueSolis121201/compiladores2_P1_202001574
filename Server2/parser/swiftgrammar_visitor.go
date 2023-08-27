@@ -4,7 +4,6 @@ package parser // SwiftGrammar
 import "github.com/antlr4-go/antlr/v4"
 
 
-
 // A complete Visitor for a parse tree produced by SwiftGrammarParser.
 type SwiftGrammarVisitor interface {
 	antlr.ParseTreeVisitor
@@ -17,6 +16,27 @@ type SwiftGrammarVisitor interface {
 
 	// Visit a parse tree produced by SwiftGrammarParser#instruction.
 	VisitInstruction(ctx *InstructionContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#fuctionstmt.
+	VisitFuctionstmt(ctx *FuctionstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#parametros.
+	VisitParametros(ctx *ParametrosContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#structstmt.
+	VisitStructstmt(ctx *StructstmtContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#declaracion_matrissts.
+	VisitDeclaracion_matrissts(ctx *Declaracion_matrisstsContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#declaracion_matrissts_supp.
+	VisitDeclaracion_matrissts_supp(ctx *Declaracion_matrissts_suppContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#typematris.
+	VisitTypematris(ctx *TypematrisContext) interface{}
+
+	// Visit a parse tree produced by SwiftGrammarParser#corizmatris.
+	VisitCorizmatris(ctx *CorizmatrisContext) interface{}
 
 	// Visit a parse tree produced by SwiftGrammarParser#asignacion_vectorstmt.
 	VisitAsignacion_vectorstmt(ctx *Asignacion_vectorstmtContext) interface{}

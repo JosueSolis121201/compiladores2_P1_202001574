@@ -35,7 +35,7 @@ D_COUNT:    '.count';
 REPEATING:    'repeating';
 DEFAULT:    'default';
 COUNT:    'count';
-STRUCT:    'STRUCT';
+STRUCT:    'struc';
 MUTATING:    'mutating';
 FUNC:    'func';
 SELF_D:    'self.';

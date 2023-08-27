@@ -23,7 +23,7 @@ type Message struct {
 
 func main() {
 	//Entrada
-	code := "vec1[1] = vec1[0]"
+	code := "func suma( num1 x : Int, num2 y: Int) -> Int { print(5) }"
 	//Leyendo entrada
 	input := antlr.NewInputStream(code)
 	lexer := parser.NewSwiftLexer(input)

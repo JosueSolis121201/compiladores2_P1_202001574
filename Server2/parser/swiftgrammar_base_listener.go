@@ -38,6 +38,50 @@ func (s *BaseSwiftGrammarListener) EnterInstruction(ctx *InstructionContext) {}
 // ExitInstruction is called when production instruction is exited.
 func (s *BaseSwiftGrammarListener) ExitInstruction(ctx *InstructionContext) {}
 
+// EnterFuctionstmt is called when production fuctionstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterFuctionstmt(ctx *FuctionstmtContext) {}
+
+// ExitFuctionstmt is called when production fuctionstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitFuctionstmt(ctx *FuctionstmtContext) {}
+
+// EnterParametros is called when production parametros is entered.
+func (s *BaseSwiftGrammarListener) EnterParametros(ctx *ParametrosContext) {}
+
+// ExitParametros is called when production parametros is exited.
+func (s *BaseSwiftGrammarListener) ExitParametros(ctx *ParametrosContext) {}
+
+// EnterStructstmt is called when production structstmt is entered.
+func (s *BaseSwiftGrammarListener) EnterStructstmt(ctx *StructstmtContext) {}
+
+// ExitStructstmt is called when production structstmt is exited.
+func (s *BaseSwiftGrammarListener) ExitStructstmt(ctx *StructstmtContext) {}
+
+// EnterDeclaracion_matrissts is called when production declaracion_matrissts is entered.
+func (s *BaseSwiftGrammarListener) EnterDeclaracion_matrissts(ctx *Declaracion_matrisstsContext) {}
+
+// ExitDeclaracion_matrissts is called when production declaracion_matrissts is exited.
+func (s *BaseSwiftGrammarListener) ExitDeclaracion_matrissts(ctx *Declaracion_matrisstsContext) {}
+
+// EnterDeclaracion_matrissts_supp is called when production declaracion_matrissts_supp is entered.
+func (s *BaseSwiftGrammarListener) EnterDeclaracion_matrissts_supp(ctx *Declaracion_matrissts_suppContext) {
+}
+
+// ExitDeclaracion_matrissts_supp is called when production declaracion_matrissts_supp is exited.
+func (s *BaseSwiftGrammarListener) ExitDeclaracion_matrissts_supp(ctx *Declaracion_matrissts_suppContext) {
+}
+
+// EnterTypematris is called when production typematris is entered.
+func (s *BaseSwiftGrammarListener) EnterTypematris(ctx *TypematrisContext) {}
+
+// ExitTypematris is called when production typematris is exited.
+func (s *BaseSwiftGrammarListener) ExitTypematris(ctx *TypematrisContext) {}
+
+// EnterCorizmatris is called when production corizmatris is entered.
+func (s *BaseSwiftGrammarListener) EnterCorizmatris(ctx *CorizmatrisContext) {}
+
+// ExitCorizmatris is called when production corizmatris is exited.
+func (s *BaseSwiftGrammarListener) ExitCorizmatris(ctx *CorizmatrisContext) {}
+
 // EnterAsignacion_vectorstmt is called when production asignacion_vectorstmt is entered.
 func (s *BaseSwiftGrammarListener) EnterAsignacion_vectorstmt(ctx *Asignacion_vectorstmtContext) {}
 

@@ -52,6 +52,46 @@ instruction returns [interfaces.Instruction inst]
 | isempystmt {}
 | countstmt {}
 | asignacion_vectorstmt {}
+| declaracion_matrissts {}
+| structstmt {}
+| fuctionstmt {}
+;
+
+fuctionstmt returns []
+: FUNC ID PARIZQ parametros PARDER SUB MAYOR types LLAVEIZQ block LLAVEDER {}
+;
+
+parametros returns []
+: parametros COMA ID ID D_PTS types  {}
+| ID ID D_PTS types  {}
+|   
+;
+
+
+structstmt returns []
+: STRUCT ID LLAVEIZQ block LLAVEDER {}
+;
+
+
+
+declaracion_matrissts returns []
+: types ID D_PTS  IG declaracion_matrissts_supp {}
+;
+
+declaracion_matrissts_supp returns []
+: typematris PARIZQ REPEATING D_PTS typematris {}
+;
+
+typematris returns []
+: corizmatris types 
+;
+
+
+
+
+corizmatris returns []
+: corizmatris CORIZQ  {}
+|CORIZQ
 ;
 
 asignacion_vectorstmt returns []
@@ -221,6 +261,7 @@ expr returns [interfaces.Expression e]
     }                        
 | TRU { $e = expressions.NewPrimitive($TRU.line, $TRU.pos, true, environment.BOOLEAN) }
 | FAL { $e = expressions.NewPrimitive($FAL.line, $FAL.pos, false, environment.BOOLEAN) }
+| GUION_B
 ;
 
 listParams returns[[]interface{} l]

@@ -16,6 +16,27 @@ type SwiftGrammarListener interface {
 	// EnterInstruction is called when entering the instruction production.
 	EnterInstruction(c *InstructionContext)
 
+	// EnterFuctionstmt is called when entering the fuctionstmt production.
+	EnterFuctionstmt(c *FuctionstmtContext)
+
+	// EnterParametros is called when entering the parametros production.
+	EnterParametros(c *ParametrosContext)
+
+	// EnterStructstmt is called when entering the structstmt production.
+	EnterStructstmt(c *StructstmtContext)
+
+	// EnterDeclaracion_matrissts is called when entering the declaracion_matrissts production.
+	EnterDeclaracion_matrissts(c *Declaracion_matrisstsContext)
+
+	// EnterDeclaracion_matrissts_supp is called when entering the declaracion_matrissts_supp production.
+	EnterDeclaracion_matrissts_supp(c *Declaracion_matrissts_suppContext)
+
+	// EnterTypematris is called when entering the typematris production.
+	EnterTypematris(c *TypematrisContext)
+
+	// EnterCorizmatris is called when entering the corizmatris production.
+	EnterCorizmatris(c *CorizmatrisContext)
+
 	// EnterAsignacion_vectorstmt is called when entering the asignacion_vectorstmt production.
 	EnterAsignacion_vectorstmt(c *Asignacion_vectorstmtContext)
 
@@ -108,6 +129,27 @@ type SwiftGrammarListener interface {
 
 	// ExitInstruction is called when exiting the instruction production.
 	ExitInstruction(c *InstructionContext)
+
+	// ExitFuctionstmt is called when exiting the fuctionstmt production.
+	ExitFuctionstmt(c *FuctionstmtContext)
+
+	// ExitParametros is called when exiting the parametros production.
+	ExitParametros(c *ParametrosContext)
+
+	// ExitStructstmt is called when exiting the structstmt production.
+	ExitStructstmt(c *StructstmtContext)
+
+	// ExitDeclaracion_matrissts is called when exiting the declaracion_matrissts production.
+	ExitDeclaracion_matrissts(c *Declaracion_matrisstsContext)
+
+	// ExitDeclaracion_matrissts_supp is called when exiting the declaracion_matrissts_supp production.
+	ExitDeclaracion_matrissts_supp(c *Declaracion_matrissts_suppContext)
+
+	// ExitTypematris is called when exiting the typematris production.
+	ExitTypematris(c *TypematrisContext)
+
+	// ExitCorizmatris is called when exiting the corizmatris production.
+	ExitCorizmatris(c *CorizmatrisContext)
 
 	// ExitAsignacion_vectorstmt is called when exiting the asignacion_vectorstmt production.
 	ExitAsignacion_vectorstmt(c *Asignacion_vectorstmtContext)
